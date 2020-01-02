@@ -217,5 +217,9 @@ def winning_team
   end 
 end 
 
+def player_with_longest_name 
+  all_players_array.max_by { |player_hash| player_hash[:player_name].length }[:player_name]
+end 
+  
 
 # rspec spec/hashketball_spec.rb -e num_points_scored
