@@ -195,17 +195,11 @@ def most_points_scored
   all_players_array.max_by { |player_hash| player_hash[:points] }[:player_name]
 end 
 
-def add_total_points
-  new_hash = game_hash
-  new_hash[:home][:total_points] = 0 
-  new_hash[:away][:total_points] = 0 
-  new_hash.each do |team, team_hash|
-    team_hash[:players].each do |player_hash|
-      team_hash[:total_points] += player_hash[:points]
-    end 
-  end 
-  new_hash
-end 
+
+
+def score_board 
+  score = {}
+  
 
 def winning_team
   game_hash.max_by { |team, team_hash| team_hash[:players].flatten.values_at(:points).sum }[:team_name]
