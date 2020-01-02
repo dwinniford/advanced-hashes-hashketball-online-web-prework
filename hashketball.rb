@@ -211,7 +211,9 @@ end
 
 def winning_team
   score_board.each do  |team, score| 
-    if score 
+    if score == score_board.values.max 
+     return team 
+    end 
   end 
 end 
 
