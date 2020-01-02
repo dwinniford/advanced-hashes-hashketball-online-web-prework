@@ -201,7 +201,7 @@ def score_board
   score = {}
   game_hash.each_with_object(score) do |(team, team_hash), score|
     team_name = team_hash[:team_name]
-    score << team_name = 0 
+    score  team_name = 0 
     team_hash[:players].each_with_object(score) do |player_hash, score|
       score[team_name] += player_hash[:points]
     end 
