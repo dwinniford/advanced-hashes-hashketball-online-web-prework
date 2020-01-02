@@ -199,10 +199,20 @@ end
 
 def score_board 
   score = {}
-  
+  game_hash.each_with_object(score) do |(team, team_hash), score|
+    team_name = team_hash[:team_name]
+    score << team_name = 0 
+    team_hash[:players].each_with_object(score) do |player_hash, score|
+      score[team_name] += player_hash[:points]
+    end 
+    score 
+  end
+end 
 
 def winning_team
-  game_hash.max_by { |team, team_hash| team_hash[:players].flatten.values_at(:points).sum }[:team_name]
+  score_board.max_by do  |team, score| 
+    score 
+  end 
 end 
 
 
