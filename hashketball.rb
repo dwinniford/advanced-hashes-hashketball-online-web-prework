@@ -210,8 +210,8 @@ def score_board
 end 
 
 def winning_team
-  score_board.max_by do  |team, score| 
-    score 
+  score_board.each do  |team, score| 
+    if score 
   end 
 end 
 
