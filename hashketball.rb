@@ -221,5 +221,18 @@ def player_with_longest_name
   all_players_array.max_by { |player_hash| player_hash[:player_name].length }[:player_name]
 end 
   
+def steals_of_longest_name
+  all_players_array.max_by { |player_hash| player_hash[:player_name].length }[:steals]
+end 
+
+def most_steals
+  all_players_array.max_by { |player_hash| player_hash[:steals] }[:steals]
+end 
+  
+
+def long_name_steals_a_ton?
+  steals_of_longest_name == most_steals
+end 
+  
 
 # rspec spec/hashketball_spec.rb -e num_points_scored
